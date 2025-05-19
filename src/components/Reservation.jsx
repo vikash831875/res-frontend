@@ -18,7 +18,7 @@ const Reservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/reservation/send", {
+      const response = await axios.post("https://res-backend-one.vercel.app/api/v1/reservation/send", {
         firstName,
         lastName,
         email,
