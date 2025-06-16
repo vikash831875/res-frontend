@@ -18,19 +18,20 @@ const Reservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://res-backend-one.vercel.app/api/v1/reservation/send", {
-        firstName,
-        lastName,
-        email,
-        phone,
-        date,
-        time,
-      }, {
-        headers: {
-          "Content-Type": "application/json"
-        },
-        withCredentials: true
-      });
+      const response = await axios.post("http://localhost:5000/api/v1/reservation/send", {
+  firstName,
+  lastName,
+  email,
+  phone,
+  date,
+  time,
+}, {
+  headers: {
+    "Content-Type": "application/json"
+  },
+  withCredentials: true
+});
+
 
       toast.success(response.data.message);
       // Reset form
