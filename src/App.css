@@ -862,15 +862,18 @@ footer .container .banner .right {
   background-size: cover;
   background-position: right;
 }
+
 .reservation .container {
   max-width: 1500px;
   min-width: 1500px;
   display: flex;
 }
+
 .reservation .container .banner {
   width: 50%;
   padding: 50px;
 }
+
 .reservation .container .banner .reservation_form_box {
   width: 400px;
   background: #fff;
@@ -880,11 +883,13 @@ footer .container .banner .right {
   -webkit-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
   -moz-box-shadow: -1px 0px 37px 0px rgba(152, 87, 191, 0.75);
 }
+
 .reservation .container .banner .reservation_form_box form div {
   display: flex;
   gap: 25px;
   margin-bottom: 20px;
 }
+
 .reservation .container .banner .reservation_form_box form div input {
   flex: 1;
   padding: 5px;
@@ -894,12 +899,9 @@ footer .container .banner .right {
   border-bottom: 1px solid #333;
   background: transparent;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="email"] {
+
+.reservation .container .banner .reservation_form_box form input[type="email"],
+.reservation .container .banner .reservation_form_box form input[type="number"] {
   width: 100%;
   margin-bottom: 20px;
   padding: 5px;
@@ -909,52 +911,23 @@ footer .container .banner .right {
   border-bottom: 1px solid #555;
   background: transparent;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="number"] {
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 5px;
-  font-size: 16px;
-  font-weight: 300;
-  border: none;
-  border-bottom: 1px solid #333;
-  background: transparent;
-}
-.reservation .container .banner .reservation_form_box form div input:focus,
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="number"]:focus,
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  input[type="email"]:focus {
+
+.reservation .container .banner .reservation_form_box form input:focus {
   outline: none;
   border-bottom: 2px solid skyblue;
 }
-.reservation
-  .container
-  .banner
-  .reservation_form_box
-  form
-  div
-  input::placeholder {
+
+.reservation .container .banner .reservation_form_box form div input::placeholder {
   color: #222;
 }
+
 .reservation .container .banner .reservation_form_box h1 {
   font-weight: 200;
   font-size: 2.75rem;
   color: #111;
   text-align: center;
 }
+
 .reservation .container .banner .reservation_form_box p {
   color: #333;
   font-size: 18px;
@@ -962,13 +935,16 @@ footer .container .banner .right {
   text-align: center;
   margin-bottom: 30px;
 }
+
 .reservation .container .banner:first-child {
   display: flex;
   justify-content: center;
 }
+
 .reservation .container .banner img {
   width: 550px;
 }
+
 .reservation .container .banner .reservation_form_box form button {
   border: 1px solid black;
   padding: 8px 36px;
@@ -984,6 +960,7 @@ footer .container .banner .right {
   background: transparent;
   margin-top: 30px;
 }
+
 .reservation .container .banner .reservation_form_box form button span {
   margin-left: 1rem;
   padding: 3px;
@@ -991,53 +968,87 @@ footer .container .banner .right {
   border-radius: 100%;
   color: #fff;
 }
+
+/* Responsive Styling Below */
+
 @media (max-width: 1520px) {
   .reservation .container {
     min-width: 100%;
   }
 }
-@media (max-width: 1040px) {
-  .reservation .container .banner {
-    padding: 20px;
-  }
-}
+
 @media (max-width: 1350px) {
   .reservation .container .banner img {
     width: 42vw;
   }
 }
+
+@media (max-width: 1040px) {
+  .reservation .container .banner {
+    padding: 20px;
+  }
+}
+
 @media (max-width: 885px) {
   .reservation .container {
     flex-direction: column;
     gap: 30px;
   }
-  .reservation .container .banner img {
-    width: 70vw;
-  }
+
   .reservation .container .banner {
     width: 100%;
     display: flex;
     justify-content: center;
   }
+
+  .reservation .container .banner img {
+    width: 70vw;
+  }
 }
+
 @media (max-width: 660px) {
   .reservation .container .banner img {
     width: 100%;
   }
 }
-@media (max-width: 450px) {
-  .reservation .container .banner .reservation_form_box {
+
+/* 👇✅ Mobile form layout fix */
+@media (max-width: 600px) {
+  .reservation .container .banner .reservation_form_box form div {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .reservation .container .banner .reservation_form_box form div input,
+  .reservation .container .banner .reservation_form_box form input[type="email"],
+  .reservation .container .banner .reservation_form_box form input[type="number"] {
     width: 100%;
   }
+
+  .reservation .container .banner .reservation_form_box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .reservation .container .banner .reservation_form_box form button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
   .reservation .container .banner .reservation_form_box h1 {
     font-size: 2rem;
   }
 }
+
 @media (max-width: 325px) {
   .reservation .container .banner .reservation_form_box h1 {
     font-size: 1.6rem;
   }
 }
+
 /**********************************************************************************************************************/
 
 /******************* NOT FOUND PAGE STYLING **************/
