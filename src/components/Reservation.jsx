@@ -16,38 +16,36 @@ const Reservation = () => {
   const navigate = useNavigate();
 
   const handleReservation = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post("https://res-backend-1.onrender.com/api/v1/reservation/send
-", {
-  firstName,
-  lastName,
-  email,
-  phone,
-  date,
-  time,
-}, {
-  headers: {
-    "Content-Type": "application/json"
-  },
-  withCredentials: true
-});
+  e.preventDefault();
+  try {
+    const response = await axios.post("https://res-backend-1.onrender.com/api/v1/reservation/send", {
+      firstName,
+      lastName,
+      email,
+      phone,
+      date,
+      time,
+    }, {
+      headers: {
+        "Content-Type": "application/json"
+      },
+      withCredentials: true
+    });
 
+    toast.success(response.data.message);
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setTime("");
+    setDate("");
+    navigate("/success");
 
-      toast.success(response.data.message);
-      // Reset form
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setTime("");
-      setDate("");
-      navigate("/success");
-
-    } catch (error) {
-      toast.error(error.response?.data?.message || "Reservation failed");
-    }
+  } catch (error) {
+    toast.error(error.response?.data?.message || "Reservation failed");
   }
+};
+
 
   return (
     <section className='reservation' id='reservation'>
