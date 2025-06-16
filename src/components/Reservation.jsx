@@ -18,7 +18,8 @@ const Reservation = () => {
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://res-backend-1.onrender.com", {
+      const response = await axios.post("https://res-backend-1.onrender.com/api/v1/reservation/send
+", {
   firstName,
   lastName,
   email,
